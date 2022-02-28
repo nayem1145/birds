@@ -1,0 +1,788 @@
+/********** Header Area *********/ 
+.header-area {
+    padding: 90px 0;
+    background-color: #fff; 
+    .logo {
+        a {
+            max-width: 200px; 
+            display: inline-block;
+        }
+    }
+    .nav-area {
+        padding-left: 60px;
+        ul {
+            display: inline-block; 
+            li {
+                display: inline-block;
+                a {
+                    display: block; 
+                    text-transform: capitalize; 
+                    font-size: 15px;
+                    font-weight: 900;
+                    color: #D9D9D9;
+                    padding: 15px 18px;
+                    transition: $transition;
+                    text-decoration: none;
+                }
+                &.active {
+                    a {
+                        color: $primary-color;
+                    }
+                }
+                &:hover {
+                    a {
+                        color: $primary-color;
+                    }
+                }
+            }
+        }
+        .mobile-menu-toggle {
+            display: none;
+        }
+    }
+    @include medium-screen {
+        padding: 40px 0;
+        .container {
+            max-width: 800px;
+        }
+        .nav-area {
+            padding-left: 0;
+            text-align: right;
+        }
+    }
+    @include small-screen {
+        .container {
+            max-width: 600px;
+        }
+        .nav-area {
+            nav {
+                display: none;
+            }
+            .mobile-menu-toggle {
+                display: block;
+                button {
+                    border: 0;
+                    background-color: transparent;
+                    font-size: 30px;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+    @include portrait-phone {
+        .container {
+            max-width: 480px;
+        }
+    }
+}
+
+/********************* Mobile Menu ********************/ 
+.nft-mobile-menu {
+    position: fixed; 
+    width: 260px;
+    height: 100vh;
+    overflow-y: scroll;
+    top: 0; 
+    left: -280px;
+    background-color: #fff;
+    padding: 60px 0;
+    z-index: 110;
+    transition: $transition;
+    box-shadow: 20px 10px 30px rgba(0,0,0,0.1);
+    .close {
+        position: absolute; 
+        right: 10px;
+        top: 10px;
+        background-color: transparent;
+        border: 0;
+        font-size: 25px;
+        transition: $transition; 
+        &:hover {
+            color: $secondary-color;
+        }
+    }
+    .mobile-menu-logo {
+        width: 200px;
+        display: block;
+        margin-left: 13px;
+    }
+    ul {
+        margin-top: 40px;
+        li {
+            display: block; 
+            a {
+                display: block;
+                padding: 8px 8px 8px 15px; 
+                border-bottom: 1px solid rgba(0,0,0,0.1);
+                font-weight: 500;
+                color: $heading-color;
+                text-transform: capitalize;
+            }
+        }
+    }
+}
+
+.mobile-menu-active {
+    left: 0; 
+}
+
+
+/*********** Hero Section *******/ 
+.hero-section {
+    padding: 70px 0;
+    background-color: #fff;
+    .hero-left {
+        .hero-title {
+            h1 {
+                text-transform: initial;
+                mark {
+                    color: $primary-color; 
+                    background-color: transparent;    
+                    padding: 0;
+                }
+            }
+        }
+        .hero-desc {
+            margin-top: 15px;
+            max-width: 440px;
+            p {
+                font-size: 15px;
+                color: $heading-color; 
+                line-height: 18px;
+            }
+        }
+        .hero-btn {
+            margin-top: 20px;
+        }
+        .hero-brands {
+            display: flex; 
+            align-items: center;
+            margin-top: 40px;
+            .brand-wrapper {
+                margin-right: 30px;
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+    .hero-right {
+        height: 100%;
+        position: relative;
+        .circle-shape {
+            position: absolute; 
+            left: -300px; 
+            bottom: -70px;
+            img {
+                display: inline-block;
+                width: auto;
+            }
+        }
+        .birds-nft {
+            position: absolute;
+            right: 30px;
+            img {
+                width: auto;
+            }
+        }
+    }
+    @include large-screen {
+        .hero-right {
+            .circle-shape {
+                img {
+                    width: 100%;
+                }
+            }
+        }
+    }
+    @include medium-screen {
+        padding-top: 40px;
+        .container {
+            max-width: 800px;
+        }
+        .hero-right {
+            margin-bottom: 20px;
+            .circle-shape {
+                display: none;
+            }
+            .birds-nft {
+                position: initial;
+                img {
+                    width: auto; 
+                    max-width: 100%;
+                }
+            }
+        }
+    }
+    @include small-screen {
+        .container {
+            max-width: 600px;
+        }
+    }
+    @include portrait-phone {
+        .container {
+            max-width: 480px;
+        }
+        .hero-left {
+            .hero-title {
+                h1 {
+                    font-size: 45px;
+                }
+            }
+        }
+    }
+}
+
+/********** NFT Birds ***********/ 
+.nft-birds {
+    background-color: #F3F4FF;
+    padding: 85px 0 0 0;
+    overflow: hidden;
+    height: 550px;
+    .nft-slider {
+        .slider-item-box {
+            width: 135px; 
+            background-color: #878787;
+            border-radius: 7px;
+            text-align: center;
+            transition: $transition;
+            position: relative;
+            z-index: 1;
+            &::before {
+                content: ''; 
+                position: absolute; 
+                width: 100%; 
+                height: 100%; 
+                background-image: linear-gradient(215deg, #ff6f00e0, #5e5fd6e3); 
+                left: 0; 
+                top: 0; 
+                border-radius: 7px;
+                opacity: 0;
+                transition: $transition;
+                z-index: -1;
+            }
+            .item-wrapper {
+                padding: 10px 35px 10px 20px;
+                img {
+                    filter: grayscale(90%);
+                    display: inline-block;
+                    transition: $transition;
+                }
+                
+            }
+            &:hover {
+                transform: scale(1.18);
+                box-shadow: 1px 4px 17px rgba(0,0,0,0.17);
+                &::before {
+                    opacity: 1;
+                }
+                .item-wrapper {
+                    img {
+                        filter: grayscale(0);
+                    }
+                }
+            }
+            
+        }
+        .slick-list {
+            margin: 0 -10.5px;
+            padding: 40px 40px !important;
+            .slick-slide {
+                margin: 0 10.5px;
+            }
+        }
+        &.nft-slider-2 {
+            margin-top: -60px;
+            .slick-list {
+                padding: 40px 0px 0 0px !important;
+            }
+        }
+    }
+    @include screen-1600 {
+        height: 500px;
+    }
+    @include screen-1440 {
+        height: 450px;
+    }
+    @include screen-1200 {
+        height: 430px;
+    }
+    @include large-screen {
+        height: auto;
+        padding-bottom: 120px;
+    }
+    @include portrait-phone {
+        .title-style-1 {
+            h2 {
+                font-size: 50px; 
+                line-height: 50px;
+            }
+        }
+    }
+}
+
+/*********** Service Area *************/ 
+.nft-service-area {
+    padding: 175px 0 106px 0;
+    background-color: #F3F4FF;
+    .title-style-2 {
+        margin-left: -30px; 
+    }
+    .service-content {
+        background-color: #fff;
+        border-radius: 30px;
+        padding: 50px;
+        box-shadow: 1px 1px 13px rgba(0,0,0,0.16);
+        margin-top: 20px;
+        .birds-left {
+            position: relative;
+            height: 100%;
+            .circle-shape {
+                position: absolute;
+                top: -50px;
+                left: 30px;
+                width: 320px;
+            }
+            .img-wrapper {
+                position: absolute;
+                bottom: 45px;
+                width: 380px;
+                z-index: 2;
+            }
+        }
+        .right-content {
+            padding-left: 50px;
+            .content-box {
+                + .content-box {
+                    margin-top: 30px;
+                }
+                h6 {
+                    color: $heading-color;
+                    font-size: 15px; 
+                    text-transform: uppercase;
+                    line-height: 18px;
+                }
+                p {
+                    font-size: 15px;
+                    margin-top: 15px;
+                    max-width: 435px;
+                }
+            }
+            .service-btn {
+                margin-top: 30px;
+            }
+        }
+    }
+    @include medium-screen {
+        .container {
+            max-width: 800px;
+        }
+        .title-style-2 {
+            margin-left: 0;
+        }
+        .service-content {
+            overflow: hidden;
+            .birds-left {
+                .circle-shape {
+                    left: -70px;
+                }
+                .img-wrapper {
+                    position: initial;
+                    width: 100%;
+                }
+            }
+        }
+    }
+    @include small-screen {
+        padding-top: 50px;
+        .container {
+            max-width: 600px;
+        }
+        .service-content {
+            .birds-left {
+                margin-bottom: 40px;
+            }
+        }
+    }
+    @include portrait-phone {
+        .container {
+            max-width: 480px;
+        }
+        .title-style-2 {
+            h2 {
+                font-size: 50px;
+                line-height: 50px;
+            }
+        }
+        .service-content {
+            padding: 50px 30px;
+            .right-content {
+                padding-left: 0;
+            }
+        }
+    }
+}
+
+/************ Feedback Area *************/ 
+.feedback-area {
+    background-color: #F3F4FF;
+    padding-bottom: 90px;
+    .title-area {
+        text-align: center;
+        h3 {
+            text-transform: initial;
+            color: $primary-color;
+            line-height: 35px;
+        }
+        p {
+            max-width: 450px;
+            display: inline-block;
+            font-size: 15px;
+            line-height: 18px;
+            margin-top: 20px;
+        }
+    }
+    .feedback-slider {
+        .feedback-item {
+            background-color: #fff;
+            border-radius: 30px; 
+            box-shadow: 1px 1px 13px rgba(0,0,0,0.16);
+            padding: 50px 30px 40px 30px;
+            .feedback-txt {
+                p {
+                    font-size: 17px;
+                    line-height: 22px;
+                    font-weight: 600;
+                }
+                
+            }
+            .clients-area {
+                display: flex;
+                align-items: center;
+                margin-top: 40px;
+                justify-content: space-between;
+                .clients-left {
+                    span {
+                        display: block;
+                        line-height: 20px;
+                        &.name {
+                            color: $heading-color;
+                            font-size: 15px; 
+                            text-transform: uppercase;
+                            font-weight: 700;
+                        }
+                        &.designation {
+                            color: $heading-color;
+                            font-size: 15px; 
+                            text-transform: uppercase;
+                        }
+                    }
+                }
+            }
+        }
+        .slick-list {
+            margin: 0 -30px;
+            padding: 30px 0;
+            .slick-slide {
+                margin: 0 30px;
+            }
+        }
+        .slick-arrow {
+            position: absolute; 
+            left: 50%;
+            bottom: -26px;
+            border: 0;
+            color: $primary-color;
+            background-color: transparent;
+            z-index: 10;
+            &.prev-btn {
+                left: calc(50% - 80px);
+            }
+            &.next-btn {
+                left: auto; 
+                right: calc(50% - 75px);
+            }
+        }
+        .slick-dots {
+            position: absolute;
+            bottom: -20px;
+            width: 100%;
+            text-align: center;
+            li {
+                display: inline-block;
+                margin-right: 8px;
+                button {
+                    font-size: 0;
+                    width: 20px; 
+                    height: 4px;
+                    background-color: #424242;
+                    border: 0; 
+                }
+                &.slick-active {
+                    button {
+                        background-color: $primary-color;
+                    }
+                }
+            }
+        }
+    }
+    @include medium-screen {
+        .container {
+            max-width: 800px;
+        }
+        .feedback-slider {
+            .slick-list {
+                margin: 0 -15px;
+                .slick-slide {
+                    margin: 0 15px;
+                }
+            }
+        }
+    }
+    @include small-screen {
+        .container {
+            max-width: 600px;
+        }
+    }
+    @include portrait-phone {
+        .container {
+            max-width: 480px;
+        }
+        .feedback-slider {
+            .slick-arrow {
+                &.prev-btn {
+                    left: calc(50% - 90px);
+                }
+                &.next-btn {
+                    right: calc(50% - 85px);
+                }
+            }
+        }
+    }
+}
+
+/************* Token Area *************/ 
+.token-area {
+    padding: 60px 0;
+    background-color: #fff;
+    overflow: hidden;
+    .token-box {
+        background-color: #fff; 
+        box-shadow: 1px 1px 11px rgba(0,0,0,0.16);
+        border-radius: 30px;
+        .token-left {
+            padding: 50px;
+            .top-boxs {
+                display: flex;
+                align-items: center;
+                flex-wrap: wrap;
+                .box-single {
+                    background-color: $primary-color; 
+                    border-radius: 15px; 
+                    width: 180px;
+                    padding: 20px 10px 20px 30px;
+                    flex-shrink: 0;
+                    margin-right: 30px;
+                    margin-bottom: 30px;
+                    &:last-child {
+                        margin-right: 0;
+                    }
+                    h5 {
+                        color: #fff;
+                        font-size: 22px; 
+                        font-weight: 700;
+                    }
+                    p {
+                        color: #fff;
+                        font-size: 15px;
+                        font-weight: 600;
+                        margin-top: 3px;
+                        line-height: 15px;
+                        opacity: 50%;
+                    }
+                }
+            }
+            .token-content {
+                margin-top: 10px;
+                .title {
+                    h2 {
+                        font-size: 45px;
+                        color: $primary-color;
+                    }
+                }
+                .token-desc {
+                    p {
+                        color: $heading-color; 
+                        font-size: 15px; 
+                        line-height: 20px;
+                    }
+                }
+                .join-btn {
+                    margin-top: 15px;
+                }
+            }
+        }
+        .token-birds {
+            position: relative; 
+            height: 100%;
+            .birds-img {
+                position: absolute;
+                left: -40px;
+                bottom: 35px;
+                img {
+                    width: auto;
+                }
+            }
+        }
+    }
+    @include medium-screen {
+        .container {
+            max-width: 800px;
+        }
+        .token-box {
+            .token-birds {
+                padding: 30px 50px 0 50px;
+                .birds-img {
+                    position: initial;
+                    img {
+                        width: auto; 
+                        max-width: 100%;
+                    }
+                }
+            }
+        }
+    }
+    @include small-screen {
+        .container {
+            max-width: 600px;
+        }
+    }
+    @include portrait-phone {
+        .container {
+            max-width: 480px;
+        }
+        .token-box {
+            .token-left {
+                padding: 50px 30px 40px 30px;
+            }
+        }
+    }
+}
+
+/************** Token Boxes ************/ 
+.tk-box-area {
+    background-color: #fff; 
+    padding: 140px 0 160px 0;
+    .tk-boxs {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: center;
+        .box-single {
+            background-color: $primary-color; 
+            border-radius: 15px; 
+            width: 180px;
+            padding: 20px 10px 20px 30px;
+            margin-right: 22px;
+            margin-bottom: 22px;
+            &:last-child {
+                margin-right: 0;
+            }
+            h5 {
+                color: #fff;
+                font-size: 22px; 
+                font-weight: 700;
+            }
+            p {
+                color: #fff;
+                font-size: 15px;
+                font-weight: 600;
+                margin-top: 3px;
+                line-height: 15px;
+                opacity: 50%;
+            }
+        }
+    }
+    @include medium-screen {
+        .container {
+            max-width: 800px;
+        }
+    }
+    @include small-screen {
+        .container {
+            max-width: 600px;
+        }
+    }
+    @include portrait-phone {
+        .container {
+            max-width: 480px;
+        }
+    }
+}
+
+
+/************* Partners Brand ***************/ 
+.partners-brand {
+    overflow: hidden;
+    .section-title {
+        max-width: 490px;
+        margin: auto; 
+        text-align: center;
+        h3 {
+            color: $primary-color; 
+            line-height: 35px;
+            mark {
+                padding: 0;
+                background-color: transparent;
+            }
+        }
+        p {
+            padding: 0 10px;
+            font-size: 15px;
+            line-height: 20px;
+            color: $heading-color;
+            margin-top: 15px;
+        }
+    }
+    .partner-brand-slider {
+        margin-top: 70px;
+        &.brand-slider-1 {
+            .slick-list {
+                margin: 0 -15px;
+                padding: 0 30px !important;
+                .slick-slide {
+                    margin: 0 15px;
+                }
+            }
+        }
+        &.brand-slider-2 {
+            margin-top: 30px;
+            .slick-list {
+                margin: 0 -15px;
+                padding: 0 60px !important;
+                .slick-slide {
+                    margin: 0 15px;
+                }
+            }
+        }
+
+    }
+    @include medium-screen {
+        .container {
+            max-width: 800px;
+        }
+    }
+    @include small-screen {
+        .container {
+            max-width: 600px;
+        }
+    }
+    @include portrait-phone {
+        .container {
+            max-width: 480px;
+        }
+    }
+}
+//background-image: linear-gradient(215deg, #ff6f00e0, #5e5fd6e3);
+
+

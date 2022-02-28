@@ -1,0 +1,29 @@
+/*-------------------------------------------------------------
+Template Name: NFT Crazy
+Template URL: 
+Author Name: Theme_Crazy
+Author URL: https://themeforest.net/user/theme_crazy/portfolio
+Version: 1.0
+Description: 
+Tags: nft
+Text Domain: nftcrazy
+-------------------------------------------------------------*/ 
+
+/*------------------------------------------------------------- 
+TABLE OF CONTENTS: 
+---------------------------------------------------------------
+>> Variables
+>> Theme Default
+>> Mixin 
+>> Home1
+
+--------------------------------------------------------------*/
+
+// Theme
+@import 'theme/variable';
+@import 'theme/theme-default';
+@import 'theme/mixin';
+
+// Pages
+@import 'pages/home-1.scss';
+
